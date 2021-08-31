@@ -1,5 +1,5 @@
-from entities.output import Output
-from lutron import Lutron
+from pylutron.entities.output import Output
+from pylutron.lutron import Lutron
 
 
 class Shade(Output):

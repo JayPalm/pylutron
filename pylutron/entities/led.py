@@ -1,8 +1,12 @@
-from lutron import Lutron
-from entities.keypad import KeypadComponent, Keypad
-from events import LutronEvent
-from request_helper import _RequestHelper
-from logger import _LOGGER
+from pylutron.lutron import Lutron
+
+from pylutron.entities.keypad import Keypad
+from pylutron.entities.keypad_component import KeypadComponent
+
+# from pylutron.entities import Keypad, KeypadComponent
+from pylutron.events import LutronEvent
+from pylutron.request_helper import _RequestHelper
+from pylutron.logger import _LOGGER
 
 
 class Led(KeypadComponent):

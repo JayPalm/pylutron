@@ -1,7 +1,7 @@
-from entities import LutronEntity
-from events.lutron_event import LutronEvent
-from lutron import Lutron
-from logger import _LOGGER
+from pylutron.entities import LutronEntity
+from pylutron.events import LutronEvent
+from pylutron.lutron import Lutron
+from pylutron.logger import _LOGGER
 
 
 class Output(LutronEntity):

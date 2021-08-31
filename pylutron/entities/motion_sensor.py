@@ -1,12 +1,11 @@
 import time
-from lutron import Lutron
-from entities.lutron_entity import LutronEntity
+from pylutron.lutron import Lutron
+from pylutron.entities.lutron_entity import LutronEntity
+from pylutron.events import LutronEvent
+from pylutron.lutron_enum import BatteryStatus, PowerSource
+from pylutron.request_helper import _RequestHelper
 
-from events import LutronEvent
-from lutron_enum import BatteryStatus, PowerSource
-from request_helper import _RequestHelper
-
-from logger import _LOGGER
+from pylutron.logger import _LOGGER
 
 
 class MotionSensor(LutronEntity):

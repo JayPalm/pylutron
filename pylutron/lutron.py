@@ -1,7 +1,7 @@
-from lutron_connection import LutronConnection
-from entities.lutron_entity import LutronEntity
-from exceptions import InvalidSubscription, IntegrationIdExistsError
-from logger import _LOGGER
+from pylutron.lutron_connection import LutronConnection
+from pylutron.entities.lutron_entity import LutronEntity
+from pylutron.exceptions import InvalidSubscription, IntegrationIdExistsError
+from pylutron.logger import _LOGGER
 
 
 class Lutron(object):

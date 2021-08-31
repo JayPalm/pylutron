@@ -1,8 +1,8 @@
 from enum import Enum
-from lutron import Lutron
-from entities.lutron_entity import LutronEntity
-from events import LutronEvent
-from request_helper import _RequestHelper
+from pylutron.lutron import Lutron
+from pylutron.entities.lutron_entity import LutronEntity
+from pylutron.events import LutronEvent
+from pylutron.request_helper import _RequestHelper
 
 
 class OccupancyGroup(LutronEntity):

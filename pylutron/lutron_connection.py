@@ -4,8 +4,8 @@ import socket
 import time
 
 
-from exceptions import ConnectionExistsError, _EXPECTED_NETWORK_EXCEPTIONS
-from logger import _LOGGER
+from pylutron.exceptions import ConnectionExistsError, _EXPECTED_NETWORK_EXCEPTIONS
+from pylutron.logger import _LOGGER
 
 
 class LutronConnection(threading.Thread):

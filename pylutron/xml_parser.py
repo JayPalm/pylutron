@@ -1,6 +1,6 @@
-from logger import _LOGGER
-from area import Area
-from entities import (
+from pylutron.logger import _LOGGER
+from pylutron.area import Area
+from pylutron.entities import (
     LutronEntity,
     Output,
     Keypad,

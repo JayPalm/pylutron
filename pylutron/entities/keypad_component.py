@@ -1,5 +1,5 @@
-from entities.lutron_entity import LutronEntity
-from logger import _LOGGER
+from pylutron.entities.lutron_entity import LutronEntity
+from pylutron.logger import _LOGGER
 
 
 class KeypadComponent(LutronEntity):

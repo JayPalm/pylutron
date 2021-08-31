@@ -1,6 +1,6 @@
 from typing import Dict
 
-from events.lutron_event import LutronEvent, LutronEventHandler
+from pylutron.events import LutronEvent, LutronEventHandler
 
 
 class LutronEntity(object):
