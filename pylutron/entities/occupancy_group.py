@@ -1,5 +1,6 @@
 from enum import Enum
-from pylutron.lutron import Lutron
+
+# from pylutron.lutron import Lutron
 from pylutron.entities.lutron_entity import LutronEntity
 from pylutron.events import LutronEvent
 from pylutron.request_helper import _RequestHelper
@@ -77,7 +78,8 @@ class OccupancyGroup(LutronEntity):
     def _do_query_state(self):
         """Helper to perform the actual query for the current OccupancyGroup state."""
         return self._lutron.send(
-            Lutron.OP_QUERY,
+            # Lutron.OP_QUERY,
+            self._lutron.OP_QUERY,
             OccupancyGroup._CMD_TYPE,
             self._integration_id,
             OccupancyGroup._ACTION_STATE,

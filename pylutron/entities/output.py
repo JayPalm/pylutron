@@ -1,7 +1,9 @@
 from pylutron.entities import LutronEntity
 from pylutron.events import LutronEvent
-from pylutron.lutron import Lutron
+
+# from pylutron.lutron import Lutron
 from pylutron.logger import _LOGGER
+from pylutron.request_helper import _RequestHelper
 
 
 class Output(LutronEntity):
@@ -77,7 +79,8 @@ class Output(LutronEntity):
         """Helper to perform the actual query the current dimmer level of the
         output. For pure on/off loads the result is either 0.0 or 100.0."""
         self._lutron.send(
-            Lutron.OP_QUERY,
+            # Lutron.OP_QUERY,
+            self._lutron.OP_QUERY,
             Output._CMD_TYPE,
             self._integration_id,
             Output._ACTION_ZONE_LEVEL,
@@ -100,7 +103,8 @@ class Output(LutronEntity):
         if self._level == new_level:
             return
         self._lutron.send(
-            Lutron.OP_EXECUTE,
+            # Lutron.OP_EXECUTE,
+            self._lutron.OP_EXECUTE,
             Output._CMD_TYPE,
             self._integration_id,
             Output._ACTION_ZONE_LEVEL,

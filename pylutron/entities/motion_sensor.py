@@ -1,5 +1,6 @@
 import time
-from pylutron.lutron import Lutron
+
+# from pylutron.lutron import Lutron
 from pylutron.entities.lutron_entity import LutronEntity
 from pylutron.events import LutronEvent
 from pylutron.lutron_enum import BatteryStatus, PowerSource
@@ -91,7 +92,8 @@ class MotionSensor(LutronEntity):
         """Helper to perform the query for the current BatteryStatus."""
         component_num = 1  # doesn't seem to matter
         return self._lutron.send(
-            Lutron.OP_QUERY,
+            # Lutron.OP_QUERY,
+            self._lutron.OP_QUERY,
             MotionSensor._CMD_TYPE,
             self._integration_id,
             component_num,

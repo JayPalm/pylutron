@@ -2,6 +2,7 @@ from pylutron.lutron_connection import LutronConnection
 from pylutron.entities.lutron_entity import LutronEntity
 from pylutron.exceptions import InvalidSubscription, IntegrationIdExistsError
 from pylutron.logger import _LOGGER
+from pylutron.xml_parser import LutronXmlDbParser  # This causes circular imports
 
 
 class Lutron(object):
@@ -54,7 +55,7 @@ class Lutron(object):
         The handler will be invoked when the controller sends a notification
         regarding changed state. The user can then further query the object for the
         state itself."""
-        if not isinstance(obj, LutronEntity):
+        if not isinstance(obj, "LutronEntity"):
             raise InvalidSubscription("Subscription target not a LutronEntity")
         _LOGGER.warning(
             "DEPRECATED: Subscribing via Lutron.subscribe is obsolete. "

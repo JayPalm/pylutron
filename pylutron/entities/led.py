@@ -1,9 +1,9 @@
-from pylutron.lutron import Lutron
+# from pylutron.lutron import Lutron
 
 from pylutron.entities.keypad import Keypad
 from pylutron.entities.keypad_component import KeypadComponent
 
-# from pylutron.entities import Keypad, KeypadComponent
+
 from pylutron.events import LutronEvent
 from pylutron.request_helper import _RequestHelper
 from pylutron.logger import _LOGGER
@@ -54,7 +54,8 @@ class Led(KeypadComponent):
     def __do_query_state(self):
         """Helper to perform the actual query for the current LED state."""
         self._lutron.send(
-            Lutron.OP_QUERY,
+            # Lutron.OP_QUERY,
+            self._lutron.OP_QUERY,
             Keypad._CMD_TYPE,
             self._keypad.id,
             self.component_number,
@@ -80,7 +81,8 @@ class Led(KeypadComponent):
         new_state: bool
         """
         self._lutron.send(
-            Lutron.OP_EXECUTE,
+            # Lutron.OP_EXECUTE,
+            self._lutron.OP_EXECUTE,
             Keypad._CMD_TYPE,
             self._keypad.id,
             self.component_number,

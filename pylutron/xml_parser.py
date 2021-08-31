@@ -1,7 +1,6 @@
 from pylutron.logger import _LOGGER
 from pylutron.area import Area
 from pylutron.entities import (
-    LutronEntity,
     Output,
     Keypad,
     Shade,
@@ -26,6 +25,7 @@ class LutronXmlDbParser(object):
         self.areas = []
         self._occupancy_groups = {}
         self.project_name = None
+        # Imports here to prevent circular imports!?!
 
     def parse(self):
         """Main entrypoint into the parser. It interprets and creates all the

@@ -7,7 +7,15 @@ for enumerating and controlling the loads are supported.
 __author__ = "Dima Zavin"
 __copyright__ = "Copyright 2016, Dima Zavin"
 
-import pylutron.entities
+
+# __all__ = ["lutron"]
+
+
+from pylutron.lutron import Lutron
+
+# import pylutron.entities
+# import pylutron.area
+# import pylutron.events
 
 # from exceptions import (
 #     LutronException,

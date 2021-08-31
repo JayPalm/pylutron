@@ -1,8 +1,9 @@
 from pylutron.entities.keypad import Keypad
 from pylutron.entities.keypad_component import KeypadComponent
 from pylutron.events import LutronEvent
-from pylutron.lutron import Lutron
-from pylutron.request_helper import _RequestHelper
+
+# from pylutron.lutron import Lutron
+
 
 from pylutron.logger import _LOGGER
 
@@ -62,7 +63,8 @@ class Button(KeypadComponent):
     def press(self):
         """Triggers a simulated button press to the Keypad."""
         self._lutron.send(
-            Lutron.OP_EXECUTE,
+            # Lutron.OP_EXECUTE,
+            self._lutron.OP_EXECUTE,
             Keypad._CMD_TYPE,
             self._keypad.id,
             self.component_number,
@@ -72,7 +74,8 @@ class Button(KeypadComponent):
     def release(self):
         """Triggers a simulated button release to the Keypad."""
         self._lutron.send(
-            Lutron.OP_EXECUTE,
+            # Lutron.OP_EXECUTE,
+            self._lutron.OP_EXECUTE,
             Keypad._CMD_TYPE,
             self._keypad.id,
             self.component_number,

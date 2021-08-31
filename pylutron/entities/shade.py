@@ -1,5 +1,6 @@
 from pylutron.entities.output import Output
-from pylutron.lutron import Lutron
+
+# from pylutron.lutron import Lutron
 
 
 class Shade(Output):
@@ -12,7 +13,8 @@ class Shade(Output):
     def start_raise(self):
         """Starts raising the shade."""
         self._lutron.send(
-            Lutron.OP_EXECUTE,
+            # Lutron.OP_EXECUTE,
+            self._lutron.OP_EXECUTE,
             Output._CMD_TYPE,
             self._integration_id,
             Output._ACTION_RAISE,
@@ -21,7 +23,8 @@ class Shade(Output):
     def start_lower(self):
         """Starts lowering the shade."""
         self._lutron.send(
-            Lutron.OP_EXECUTE,
+            # Lutron.OP_EXECUTE,
+            self._lutron.OP_EXECUTE,
             Output._CMD_TYPE,
             self._integration_id,
             Output._ACTION_LOWER,
@@ -30,7 +33,8 @@ class Shade(Output):
     def stop(self):
         """Starts raising the shade."""
         self._lutron.send(
-            Lutron.OP_EXECUTE,
+            # Lutron.OP_EXECUTE,
+            self._lutron.OP_EXECUTE,
             Output._CMD_TYPE,
             self._integration_id,
             Output._ACTION_STOP,
