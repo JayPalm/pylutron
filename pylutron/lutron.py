@@ -29,12 +29,23 @@ class Lutron(object):
         self._ids = {}
         self._legacy_subscribers = {}
         self._areas = []
+        self._outputs = []
         self._guid = None
 
     @property
     def areas(self):
         """Return the areas that were discovered for this Lutron controller."""
         return self._areas
+
+    @property
+    def outputs(self):
+        """Returns all outputs discovered for this Lutron controller."""
+        return self._outputs
+
+    def all_off(self):
+        """Turn off all outputs"""
+        for output in self._outputs:
+            output.level = 0
 
     def set_guid(self, guid):
         self._guid = guid
@@ -141,6 +152,7 @@ class Lutron(object):
         parser = LutronXmlDbParser(lutron=self, xml_db_str=xml_db)
         assert parser.parse()  # throw our own exception
         self._areas = parser.areas
+        self._outputs = [output for area in self.areas for output in area.outputs]
         self._name = parser.project_name
 
         _LOGGER.info(
